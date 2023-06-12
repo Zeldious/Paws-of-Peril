@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/src/.vs/Paws-of-Peril
+/src/Zeldious.Studio.Paws-of-Peril.Windows/bin/Debug/net6.0-windows
+/src/Zeldious.Studio.Paws-of-Peril.Windows/obj
