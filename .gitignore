@@ -6,3 +6,5 @@
 /src/.vs/Paws-of-Peril
 /src/Zeldious.Studio.Paws-of-Peril.Windows/bin/Debug/net6.0-windows
 /src/Zeldious.Studio.Paws-of-Peril.Windows/obj
+/src/Zeldious.Studio.Paws-of-Peril.Entities/obj
+/src/Zeldious.Studio.Paws-of-Peril.Entities/bin/Debug/net6.0
