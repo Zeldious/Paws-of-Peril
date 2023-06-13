@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Zeldious.Studio.Paws_of_Peril.Entities;
 
 namespace Zeldious.Studio.Paws_of_Peril.Windows
 {
@@ -8,6 +9,8 @@ namespace Zeldious.Studio.Paws_of_Peril.Windows
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        private Player _player;
 
         public MainGame()
         {
@@ -30,6 +33,12 @@ namespace Zeldious.Studio.Paws_of_Peril.Windows
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // Créer le joueur
+            _player = new Player();
+            _player.Position = new Vector2(50, 700);
+            _player.Sprite = new Texture2D(GraphicsDevice, 1, 1);
+            _player.Sprite.SetData(new[] { Color.White });
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -47,7 +56,15 @@ namespace Zeldious.Studio.Paws_of_Peril.Windows
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            // environ 1/30ème de la largeur de l'écran
+            var largeur = GraphicsDevice.Viewport.Width / 30;
+            // environ 1/15ème de la hauteur de l'écran
+            var hauteur = GraphicsDevice.Viewport.Height / 15;
+
+            _spriteBatch.Begin();
+            // Dessine le joueur
+            _spriteBatch.Draw(_player.Sprite, new Rectangle((int)_player.Position.X, (int)_player.Position.Y, largeur, hauteur), Color.White);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
